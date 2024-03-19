@@ -10,7 +10,7 @@ int main()
 	printf ("print:%d\n", ft_isprint('c'));
 	printf ("strlen:%ld\n", ft_strlen("abcd"));
 
-	char str[50] = "ola ma kota";
+	char str[50] = "hello my friend";
 	ft_memset(str, 'a', 3);
 	printf ("After memset: %s\n", str);
 
@@ -23,18 +23,18 @@ int main()
 	ft_memcpy(dest, sen, 18);
 	printf("After memcpy:%s\n", dest);
 
-	char zda[] = "zaraz zasne";
+	char zda[] = "born to code";
 	char dst[1];
 	ft_memmove(dst, zda, 10);
 	printf("After memmove:%s\n", dst);
 
-	char doc[] = "aga ma kota";
-	char wyj[] = "ewa ma psa i wilka";
+	char doc[] = "what's up?";
+	char wyj[] = "gorgeous";
 	ft_strlcpy(doc, wyj, 20);
 	printf ("After strlcpy:%s\n", doc);
 
-	char ddd[] = "aga lubi tiktoki";
-	char sss[] = "aga duzo gada i nie moge sie skupic";
+	char ddd[] = "it is too late";
+	char sss[] = "I like reading books";
 	ft_strlcat(ddd, sss, 10);
 	printf ("After strlcat:%s\n", ddd);
 
@@ -72,7 +72,7 @@ int main()
 	else
 		printf ("First three symbols are not identical\n");
 
-	char eee[] = "niedziela jest super";
+	char eee[] = "sunday is great";
 	char w = 'e';
 	char *result = ft_memchr(eee, w, sizeof(eee));
 	if (result != NULL)
@@ -87,8 +87,8 @@ int main()
 	else
 		printf ("First two symbols are not identical\n");
 
-	char big[] = "stolik jest czerwony";
-	char little[] = "czerwony";
+	char big[] = "new computers";
+	char little[] = "computers";
 	char *res = ft_strnstr(big, little, ft_strlen(big));
 	if (res != NULL)
 		ft_putendl_fd(res, 1);
@@ -110,8 +110,8 @@ int main()
 	else
 		printf("Memory allocated with success\n");
 
-	char	source[] = "hej ziomeczki";
-	char	destination[] = "dawajcie na imprezke";
+	char	source[] = "hey guys";
+	char	destination[] = "go to the party";
 	ft_putstr_fd(ft_strdup(source), 1);
 	ft_putstr_fd(ft_strdup(destination), 1);
 
