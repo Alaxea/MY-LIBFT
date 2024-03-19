@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astefans <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/04 14:27:17 by astefans          #+#    #+#             */
-/*   Updated: 2024/03/05 16:41:35 by astefans         ###   ########.fr       */
+/*   Created: 2024/03/06 15:21:04 by astefans          #+#    #+#             */
+/*   Updated: 2024/03/07 14:53:04 by astefans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t num_elements, size_t element_size)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	void	*tmp_ptr;
+	int		len;
+	int		i;
+	char	*str;
 
-	if (num_elements >= 4294967295 || element_size >= 4294967295)
+	if (!s || !f)
 		return (NULL);
-	tmp_ptr = malloc(num_elements * element_size);
-	if (!tmp_ptr)
+	i = 0;
+	len = ft_strlen(s);
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (NULL);
-	ft_bzero(tmp_ptr, num_elements * element_size);
-	return (tmp_ptr);
+	while (i < len)
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

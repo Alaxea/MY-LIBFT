@@ -6,7 +6,7 @@
 /*   By: astefans <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:12:56 by astefans          #+#    #+#             */
-/*   Updated: 2024/03/01 22:37:10 by astefans         ###   ########.fr       */
+/*   Updated: 2024/03/07 21:11:48 by astefans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,25 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	unsigned char	*tmp_dst;
-	unsigned char	*tmp_src;
-	size_t	i;
+	unsigned char	*move_dst;
+	unsigned char	*move_src;
+	size_t			i;
 
-	if (dst == (void *)0 && src == (void *)0)
-		return ('\0');
-	tmp_dst = (unsigned char *) dst;
-	tmp_src = (unsigned char *) src;
+	move_dst = (unsigned char *) dst;
+	move_src = (unsigned char *) src;
+	if (!move_dst && !move_src)
+		return (NULL);
 	i = 0;
-	if (tmp_dst > tmp_src)
-		while (n-- > 0)
-			tmp_dst[n] = tmp_src[n];
+	if (move_dst > move_src)
+		while (n--)
+			move_dst[n] = move_src[n];
 	else
 	{
-		while (i++ < n)
-			tmp_dst[i] = tmp_src[i];
+		while (n--)
+		{
+			move_dst[i] = move_src[i];
+			i++;
+		}
 	}
-	return (dst);
+	return (move_dst);
 }

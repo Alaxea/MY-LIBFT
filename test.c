@@ -126,5 +126,30 @@ int main()
 	char s22[] = "book";
 	ft_putendl_fd(ft_strtrim(s11, s22), 1);
 
+	char *u = "Hello there, guy!";
+	char **v = ft_split(u, ' ');
+	while (*v)
+		printf("%s\n", *v++);
+
+	int numberr = 42444341;
+	//int numberrr = -5438574;
+	printf("Len:%d\n", int_len(numberr));
+	printf("Output:%s\n", ft_itoa(numberr));
+
+	char example_mapping_function(unsigned int i, char c)
+	{
+		return (c + 1);
+	}
+	char *input_string[] = "hello bye";
+	char *output_string = ft_strmapi(input_string, example_mapping_function);
+	if (output_string)
+	{
+		printf("Before strmapi:%s\n", input_string);
+		printf("After strmapi:%s\n", output_string);
+		free(output_string);
+	}
+	else
+		printf("ERROR");
+
 	return(0);
 }
