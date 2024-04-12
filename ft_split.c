@@ -58,7 +58,7 @@ int	fill(char **words_v, char const *s, char delimeter)
 size_t	count_words(char const *s, char delimeter)
 {
 	size_t	words;
-	bool	inside_words;
+	int	inside_words;
 
 	words = 0;
 	while (*s)
